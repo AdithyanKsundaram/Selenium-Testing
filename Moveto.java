@@ -14,20 +14,25 @@ public class Moveto {
 		
 		WebDriver driver = new ChromeDriver();
 		
-		//Get Webaddress
-		driver.get("https://www.shopclues.com/wholesale.html");
+		//Get Web address
+		driver.get("http://greenstech.in/selenium-course-content.html");
 		driver.manage().window().maximize();
 		
 		
 		//Actions Class
 		Actions a= new Actions(driver);
 		
-		//Move to Target web element
-		WebElement spotrs = driver.findElement(By.xpath("/html//div[@class='ffix nav-down']/div[@class='wrapper']/ul/li[7]/a[@href='javascript:void(0);']"));
-		a.moveToElement(spotrs).perform();
-
-		WebElement weight = driver.findElement(By.xpath("/html//div[@class='ffix nav-down']/div[@class='wrapper']/ul/li[7]/div[@class='menu_wrap_sub']/div/div[1]/ul[@class='list_blocks']//a[@alt='Home|CT4P2|Sports & M|NA|Diet Nutrition|Weight Gainers|NA|NA|CT@Weight Gainers']"));
-		weight.click();
+		//Move to 1st Target web element
+		WebElement courses = driver.findElement(By.xpath("/html//div[@id='main-header-top-greens']//div[@title='Courses']"));
+		a.moveToElement(courses).perform();
+		
+		//Move to 2nd Target web element
+		WebElement selenium = driver.findElement(By.xpath("//div[@id='browse_courses-greens']/ul[@class='dropdown-menu-list']//span[.='Software Testing (12)']"));
+		a.moveToElement(selenium).perform();
+		
+		//click 3rd target web element
+		WebElement training = driver.findElement(By.xpath("//div[@id='browse_courses-greens']/ul[@class='dropdown-menu-list']/li[7]/div[2]/ul[@class='browse-sub-menu-custom']//span[.='Selenium Certification Training']"));
+		training.click();
 		
 		
 	}
